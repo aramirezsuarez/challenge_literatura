@@ -33,3 +33,53 @@ El proyecto está organizado en los siguientes paquetes y clases:
 
 Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cualquier cambio importante antes de realizarlo.
 
+
+%% -----------------------------------------------------------
+%%     CONFIGURACIÓN DE ESTILO INSTITUCIONAL
+%% -----------------------------------------------------------
+%% Colores: 
+%%   Azul institucional (#003366)
+%%   Gris suave (#F2F2F2 / #E6E6E6)
+%%   Líneas sobrias y esquinas redondeadas
+%% -----------------------------------------------------------
+
+flowchart TD
+    classDef titulo fill:#003366,color:#ffffff,font-weight:bold,stroke:#002244,stroke-width:2;
+    classDef paso fill:#F2F2F2,stroke:#003366,stroke-width:1px,color:#000,rounded-corners;
+    classDef decision fill:#E6E6E6,stroke:#003366,stroke-width:1.5px,color:#000,stroke-dasharray: 5 5;
+
+    A[INICIO]:::titulo --> B[Ingresar a medellin.gov.co]:::paso
+
+    B --> C[Buscar 'Secretaría de Hacienda'<br>Portal Tributario]:::paso
+
+    C --> D[Buscar 'Actualiza tus Datos' y dar clic<br><b>Ruta alternativa:</b><br>Trámites y Servicios → Secretaría de Hacienda → REALIZAR]:::paso
+
+    D --> E{¿Tiene credenciales de acceso?}:::decision
+
+    E -->|No| F[Registrarse<br>(crear usuario)]:::paso
+    E -->|Sí| G[Ingresar credenciales<br>(usuario y contraseña)]:::paso
+
+    F --> H[Visualizar datos actuales]:::paso
+    G --> H
+
+    H --> I[Actualizar información:<br>• Dirección notificación ICA<br>• Celular<br>• Teléfono fijo<br>• Correo electrónico]:::paso
+
+    I --> J[Activar autorizaciones:<br>• Factura por email<br>• Notificación por correo<br>• Aceptar Política de Datos]:::paso
+
+    J --> K[Verificar datos ingresados]:::paso
+
+    K --> L{¿Datos correctos?}:::decision
+
+    L -->|No| M[Modificar información]:::paso
+    L -->|Sí| N[Clic en 'ACTUALIZAR']:::paso
+
+    M --> K
+    N --> O[Sistema confirma actualización exitosa]:::paso
+
+    O --> P[Revisar correo:<br>• Enlace de verificación<br>• Confirmar cambios<br>• Revisar spam]:::paso
+
+    P --> Q[Recibir soporte por email<br>(Secretaría de Hacienda)]:::paso
+
+    Q --> R[FIN]:::titulo
+
+
